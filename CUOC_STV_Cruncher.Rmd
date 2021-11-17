@@ -1,0 +1,29 @@
+---
+title: "CUOC Single Transferable Vote Election"
+date: "11/16/2021"
+author: "Jackie Budka"
+output: html_notebook
+---
+
+
+```{r}
+library(readxl)
+library(dplyr)
+library(tidyverse)
+library(ggplot2)
+
+```
+
+
+```{r}
+raw_ballots <- read_excel("E:/CUOC_STV/CUOC_Ballot.xlsx")
+
+```
+
+```{r}
+raw_vice_president <- raw_ballots %>%
+  mutate(
+    select("Vice President [Jackie]"
+  ))
+```
+
