@@ -5,25 +5,96 @@ author: "Jackie Budka"
 output: html_notebook
 ---
 
-
+Load packages
 ```{r}
 library(readxl)
 library(dplyr)
 library(tidyverse)
 library(ggplot2)
-
+library(janitor)
+library(STV)
 ```
 
-
+Import data and format
 ```{r}
-raw_ballots <- read_excel("E:/CUOC_STV/CUOC_Ballot.xlsx")
-
+raw_ballots <- read_excel("E:/CUOC_STV/CUOC_Ballot.xlsx") %>%
+  clean_names() %>%
+  as.data.frame() %>%
+  select(-"timestamp")
 ```
 
+President
 ```{r}
-raw_vice_president <- raw_ballots %>%
-  mutate(
-    select("Vice President [Jackie]"
-  ))
+president_raw <- raw_ballots %>%
+  select(starts_with("president_")
+  )
+president_candidates <- colnames(president_raw)
+
+president_1 <- cleanBallots(president_raw)
+
+president_2 <- stv(president_1)
+  
+```
+
+Vice President
+```{r}
+raw_vice_president_raw <- raw_ballots %>%
+  select(starts_with("vice_president_")
+  )
+vice_president_candidates <- colnames(raw_vice_president_raw)
+
+vice_president_1 <- cleanBallots(raw_vice_president_raw)
+
+vice_president_2 <- stv(vice_president_1)
+
+  
+```
+
+Treasurer
+```{r}
+treasurer_raw <- raw_ballots %>%
+  select(starts_with("treasurer_")
+  )
+treasurer_candidates <- colnames(treasurer_raw)
+
+treasurer_1 <- cleanBallots(treasurer_raw)
+
+treasurer_2 <- stv(treasurer_1)
+```
+
+Secretary
+```{r}
+secretary_raw <- raw_ballots %>%
+  select(starts_with("secretary_")
+  )
+secretary_candidates <- colnames(secretary_raw)
+
+secretary_1 <- cleanBallots(secretary_raw)
+
+secretary_2 <- stv(secretary_1)
+```
+
+Hiking Chair
+```{r}
+hiking_chair_raw <- raw_ballots %>%
+  select(starts_with("hiking_chair_")
+  )
+hiking_chair_candidates <- colnames(hiking_chair_raw)
+
+hiking_chair_1 <- cleanBallots(hiking_chair_raw)
+
+hiking_chair_2 <- stv(hiking_chair_1, seats = 3)
+```
+
+Climbing Chair
+```{r}
+climbing_chair_raw <- raw_ballots %>%
+  select(starts_with("climbing_chair_")
+  )
+climbing_chair_candidates <- colnames(climbing_chair_raw)
+
+climbing_chair_1 <- cleanBallots(climbing_chair_raw)
+
+climbing_chair_2 <- stv(climbing_chair_1, seats = 2)
 ```
 

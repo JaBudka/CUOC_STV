@@ -240,18 +240,23 @@ library(ggplot2)
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucmF3X3ZpY2VfcHJlc2lkZW50IDwtIHJhd19iYWxsb3RzICU+JVxuICBtdXRhdGUoXG4gICAgc2VsZWN0KFxuICAgIHN0YXJ0c193aXRoKCdWaWNlIFByZXNpZGVudCBbJylcbiAgKSlcbmBgYCJ9 -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucmF3X3ZpY2VfcHJlc2lkZW50IDwtIHJhd19iYWxsb3RzICU+JVxuICBtdXRhdGUoXG4gICAgc2VsZWN0KFwiVmljZSBQcmVzaWRlbnQgW0phY2tpZV1cIlxuICApKVxuYGBgIn0= -->
 <pre class="r"><code>raw_vice_president &lt;- raw_ballots %&gt;%
   mutate(
-    select(
-    starts_with(&#39;Vice President [&#39;)
+    select(&quot;Vice President [Jackie]&quot;
   ))</code></pre>
 <!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiRXJyb3I6IFByb2JsZW0gd2l0aCBgbXV0YXRlKClgIGlucHV0IGAuLjFgLlxuaSBgLi4xID0gc2VsZWN0KFwiVmljZSBQcmVzaWRlbnQgW0phY2tpZV1cIilgLlxueCBubyBhcHBsaWNhYmxlIG1ldGhvZCBmb3IgJ3NlbGVjdCcgYXBwbGllZCB0byBhbiBvYmplY3Qgb2YgY2xhc3MgXCJjaGFyYWN0ZXJcIlxuUnVuIGBybGFuZzo6bGFzdF9lcnJvcigpYCB0byBzZWUgd2hlcmUgdGhlIGVycm9yIG9jY3VycmVkLlxuIn0= -->
+<pre><code>Error: Problem with `mutate()` input `..1`.
+i `..1 = select(&quot;Vice President [Jackie]&quot;)`.
+x no applicable method for &#39;select&#39; applied to an object of class &quot;character&quot;
+Run `rlang::last_error()` to see where the error occurred.</code></pre>
+<!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 
-<div id="rmd-source-code">LS0tDQp0aXRsZTogIkNVT0MgU2luZ2xlIFRyYW5zZmVyYWJsZSBWb3RlIEVsZWN0aW9uIg0KZGF0ZTogIjExLzE2LzIwMjEiDQphdXRob3I6ICJKYWNraWUgQnVka2EiDQpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sNCi0tLQ0KDQoNCmBgYHtyfQ0KbGlicmFyeShyZWFkeGwpDQpsaWJyYXJ5KGRwbHlyKQ0KbGlicmFyeSh0aWR5dmVyc2UpDQpsaWJyYXJ5KGdncGxvdDIpDQoNCmBgYA0KDQoNCmBgYHtyfQ0KcmF3X2JhbGxvdHMgPC0gcmVhZF9leGNlbCgiRTovQ1VPQ19TVFYvQ1VPQ19CYWxsb3QueGxzeCIpDQoNCmBgYA0KDQpgYGB7cn0NCnJhd192aWNlX3ByZXNpZGVudCA8LSByYXdfYmFsbG90cyAlPiUNCiAgbXV0YXRlKA0KICAgIHNlbGVjdCgNCiAgICBzdGFydHNfd2l0aCgnVmljZSBQcmVzaWRlbnQgWycpDQogICkpDQpgYGANCg0K</div>
+<div id="rmd-source-code">LS0tDQp0aXRsZTogIkNVT0MgU2luZ2xlIFRyYW5zZmVyYWJsZSBWb3RlIEVsZWN0aW9uIg0KZGF0ZTogIjExLzE2LzIwMjEiDQphdXRob3I6ICJKYWNraWUgQnVka2EiDQpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sNCi0tLQ0KDQoNCmBgYHtyfQ0KbGlicmFyeShyZWFkeGwpDQpsaWJyYXJ5KGRwbHlyKQ0KbGlicmFyeSh0aWR5dmVyc2UpDQpsaWJyYXJ5KGdncGxvdDIpDQoNCmBgYA0KDQoNCmBgYHtyfQ0KcmF3X2JhbGxvdHMgPC0gcmVhZF9leGNlbCgiRTovQ1VPQ19TVFYvQ1VPQ19CYWxsb3QueGxzeCIpDQoNCmBgYA0KDQpgYGB7cn0NCnJhd192aWNlX3ByZXNpZGVudCA8LSByYXdfYmFsbG90cyAlPiUNCiAgbXV0YXRlKA0KICAgIHNlbGVjdCgiVmljZSBQcmVzaWRlbnQgW0phY2tpZV0iDQogICkpDQpgYGANCg0K</div>
 
 
 
