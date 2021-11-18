@@ -5,6 +5,9 @@ author: "Jackie Budka"
 output: html_notebook
 ---
 
+## Help
+If a candidate drops out of a race/wins incompatible positions/gets eaten by a brog, go into the excel file and select the column where that person is running for that position. Save and close the excel file and rerun this program.
+
 Load packages
 ```{r}
 library(readxl)
@@ -31,8 +34,9 @@ president_raw <- raw_ballots %>%
 president_candidates <- colnames(president_raw)
 
 president_1 <- cleanBallots(president_raw)
+validateBallots(president_1)
 
-president_2 <- stv(president_1)
+president_winner <- stv(president_1, seats = 1)
   
 ```
 
@@ -44,8 +48,9 @@ raw_vice_president_raw <- raw_ballots %>%
 vice_president_candidates <- colnames(raw_vice_president_raw)
 
 vice_president_1 <- cleanBallots(raw_vice_president_raw)
+validateBallots(vice_president_1)
 
-vice_president_2 <- stv(vice_president_1)
+vice_president_winner <- stv(vice_president_1, seats = 1)
 
   
 ```
@@ -58,8 +63,9 @@ treasurer_raw <- raw_ballots %>%
 treasurer_candidates <- colnames(treasurer_raw)
 
 treasurer_1 <- cleanBallots(treasurer_raw)
+validateBallots(treasurer_1)
 
-treasurer_2 <- stv(treasurer_1)
+treasurer_winner <- stv(treasurer_1, seats = 1)
 ```
 
 Secretary
@@ -70,8 +76,9 @@ secretary_raw <- raw_ballots %>%
 secretary_candidates <- colnames(secretary_raw)
 
 secretary_1 <- cleanBallots(secretary_raw)
+validateBallots(secretary_1)
 
-secretary_2 <- stv(secretary_1)
+secretary_winner <- stv(secretary_1, seats = 1)
 ```
 
 Hiking Chair
@@ -82,8 +89,9 @@ hiking_chair_raw <- raw_ballots %>%
 hiking_chair_candidates <- colnames(hiking_chair_raw)
 
 hiking_chair_1 <- cleanBallots(hiking_chair_raw)
+validateBallots(hiking_chair_1)
 
-hiking_chair_2 <- stv(hiking_chair_1, seats = 3)
+hiking_chair_winner <- stv(hiking_chair_1, seats = 3)
 ```
 
 Climbing Chair
@@ -94,7 +102,163 @@ climbing_chair_raw <- raw_ballots %>%
 climbing_chair_candidates <- colnames(climbing_chair_raw)
 
 climbing_chair_1 <- cleanBallots(climbing_chair_raw)
+validateBallots(climbing_chair_1)
 
-climbing_chair_2 <- stv(climbing_chair_1, seats = 2)
+climbing_chair_winner <- stv(climbing_chair_1, seats = 2)
 ```
 
+Canoeing Chair
+```{r}
+canoeing_chair_raw <- raw_ballots %>%
+  select(starts_with("canoeing_chair_")
+  )
+canoeing_chair_candidates <- colnames(canoeing_chair_raw)
+
+canoeing_chair_1 <- cleanBallots(canoeing_chair_raw)
+validateBallots(canoeing_chair_1)
+
+canoeing_chair_winner <- stv(canoeing_chair_1, seats = 2)
+```
+
+Mountain Biking Chair
+```{r}
+mountain_biking_chair_raw <- raw_ballots %>%
+  select(starts_with("mountain_biking_chair_")
+  )
+mountain_biking_chair_candidates <- colnames(mountain_biking_chair_raw)
+
+mountain_biking_chair_1 <- cleanBallots(mountain_biking_chair_raw)
+validateBallots(mountain_biking_chair_1)
+
+mountain_biking_chair_winner <- stv(mountain_biking_chair_1, seats = 2)
+```
+
+Back Country Skiing Chair
+```{r}
+back_country_skiing_chair_raw <- raw_ballots %>%
+  select(starts_with("back_country_skiing_chair_")
+  )
+back_country_skiing_chair_candidates <- colnames(back_country_skiing_chair_raw)
+
+back_country_skiing_chair_1 <- cleanBallots(back_country_skiing_chair_raw)
+validateBallots(back_country_skiing_chair_1)
+
+back_country_skiing_chair_winner <- stv(back_country_skiing_chair_1, seats = 2)
+```
+
+Cross Country Skiing Chair
+```{r}
+cross_country_skiing_chair_raw <- raw_ballots %>%
+  select(starts_with("cross_country_skiing_chair_")
+  )
+cross_country_skiing_chair_candidates <- colnames(cross_country_skiing_chair_raw)
+
+cross_country_skiing_chair_1 <- cleanBallots(cross_country_skiing_chair_raw)
+validateBallots(cross_country_skiing_chair_1)
+
+cross_country_skiing_chair_winner <- stv(cross_country_skiing_chair_1, seats = 2)
+```
+
+White Water Chair
+```{r}
+white_water_chair_raw <- raw_ballots %>%
+  select(starts_with("white_water_chair_")
+  )
+white_water_chair_candidates <- colnames(white_water_chair_raw)
+
+white_water_chair_1 <- cleanBallots(white_water_chair_raw)
+validateBallots(white_water_chair_1)
+
+white_water_chair_winner <- stv(white_water_chair_1, seats = 2)
+```
+
+Caving Chair
+```{r}
+caving_chair_raw <- raw_ballots %>%
+  select(starts_with("caving_chair_")
+  )
+caving_chair_candidates <- colnames(caving_chair_raw)
+
+caving_chair_1 <- cleanBallots(caving_chair_raw)
+validateBallots(caving_chair_1)
+
+caving_chair_winner <- stv(caving_chair_1, seats = 2)
+```
+
+Fishing Chair
+```{r}
+fishing_chair_raw <- raw_ballots %>%
+  select(starts_with("fishing_chair_")
+  )
+fishing_chair_candidates <- colnames(fishing_chair_raw)
+
+fishing_chair_1 <- cleanBallots(fishing_chair_raw)
+validateBallots(fishing_chair_1)
+
+fishing_chair_winner <- stv(fishing_chair_1, seats = 2)
+```
+
+Slacklining Chair
+```{r}
+slacklining_chair_raw <- raw_ballots %>%
+  select(starts_with("slacklining_chair_")
+  )
+slacklining_chair_candidates <- colnames(slacklining_chair_raw)
+
+slacklining_chair_1 <- cleanBallots(slacklining_chair_raw)
+validateBallots(slacklining_chair_1)
+
+slacklining_chair_winner <- stv(slacklining_chair_1, seats = 2)
+```
+
+Media Chair
+```{r}
+media_chair_raw <- raw_ballots %>%
+  select(starts_with("media_chair_")
+  )
+media_chair_candidates <- colnames(media_chair_raw)
+
+media_chair_1 <- cleanBallots(media_chair_raw)
+validateBallots(media_chair_1)
+
+media_chair_winner <- stv(media_chair_1, seats = 2)
+```
+
+Service Chair
+```{r}
+service_chair_raw <- raw_ballots %>%
+  select(starts_with("service_chair_")
+  )
+service_chair_candidates <- colnames(service_chair_raw)
+
+service_chair_1 <- cleanBallots(service_chair_raw)
+validateBallots(service_chair_1)
+
+service_chair_winner <- stv(service_chair_1, seats = 2)
+```
+
+46 Climbs Chair
+```{r}
+i46_climbs_chair_raw <- raw_ballots %>%
+  select(starts_with("i46_climbs_chair_")
+  )
+i46_climbs_chair_candidates <- colnames(i46_climbs_chair_raw)
+
+i46_climbs_chair_1 <- cleanBallots(i46_climbs_chair_raw)
+validateBallots(i46_climbs_chair_1)
+
+i46_climbs_chair_winner <- stv(i46_climbs_chair_1, seats = 2)
+```
+
+Forest Management Chair
+```{r}
+forest_management_chair_raw <- raw_ballots %>%
+  select(starts_with("forest_management_chair_")
+  )
+forest_management_chair_candidates <- colnames(forest_management_chair_raw)
+
+forest_management_chair_1 <- cleanBallots(forest_management_chair_raw)
+validateBallots(forest_management_chair_1)
+
+forest_management_chair_winner <- stv(forest_management_chair_1, seats = 2)
+```
