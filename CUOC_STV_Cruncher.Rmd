@@ -20,7 +20,7 @@ library(STV)
 
 Import data and format
 ```{r}
-raw_ballots <- read_excel("E:/CUOC_STV/CUOC_Ballot.xlsx") %>%
+raw_ballots <- read_excel("CUOC_Ballot.xlsx") %>%
   clean_names() %>%
   as.data.frame() %>%
   select(-"timestamp")
@@ -51,8 +51,6 @@ vice_president_1 <- cleanBallots(raw_vice_president_raw)
 validateBallots(vice_president_1)
 
 vice_president_winner <- stv(vice_president_1, seats = 1)
-
-  
 ```
 
 Treasurer
@@ -234,7 +232,7 @@ service_chair_candidates <- colnames(service_chair_raw)
 service_chair_1 <- cleanBallots(service_chair_raw)
 validateBallots(service_chair_1)
 
-service_chair_winner <- stv(service_chair_1, seats = 2)
+service_chair_winner <- stv(service_chair_1, seats = 1)
 ```
 
 46 Climbs Chair
@@ -247,7 +245,7 @@ i46_climbs_chair_candidates <- colnames(i46_climbs_chair_raw)
 i46_climbs_chair_1 <- cleanBallots(i46_climbs_chair_raw)
 validateBallots(i46_climbs_chair_1)
 
-i46_climbs_chair_winner <- stv(i46_climbs_chair_1, seats = 2)
+i46_climbs_chair_winner <- stv(i46_climbs_chair_1, seats = 1)
 ```
 
 Forest Management Chair
@@ -260,5 +258,5 @@ forest_management_chair_candidates <- colnames(forest_management_chair_raw)
 forest_management_chair_1 <- cleanBallots(forest_management_chair_raw)
 validateBallots(forest_management_chair_1)
 
-forest_management_chair_winner <- stv(forest_management_chair_1, seats = 2)
+forest_management_chair_winner <- stv(forest_management_chair_1, seats = 1)
 ```
